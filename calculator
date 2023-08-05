@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 100%;
+            padding: 20px 40px;
+            border-radius: 6px;
+        color: black;
+        background-color: green;
+        }
+        input{
+            width: 80%;
+            padding: 20px 40px;
+            border-radius: 6px;
+            text-align: end;
+        }
 
+button:hover{
+    background-color: white;
+    
+}
+        
+    </style>
+</head>
+<body>
+    <main>
+    <table border="1">
+        <tr>
+            <td colspan="3"><input value="0" id="cal" type="text"></td>
+            <td><button onclick="clean()">c</button> </td>
+        </tr>
+
+        <tr>
+            <td><button onclick="dis('7')">7</button></td>
+            <td><button onclick="dis('8')">8</button></td>
+            <td><button onclick="dis('9')">9</button></td>
+            <td><button onclick="dis('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="dis('4')">4</button></td>
+            <td><button onclick="dis('5')">5</button></td>
+            <td><button onclick="dis('6')">6</button></td>
+            <td><button onclick="dis('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="dis('3')">3</button></td>
+            <td><button onclick="dis('2')">2</button></td>
+            <td><button onclick="dis('1')">1</button></td>
+            <td><button onclick="dis('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="dis('0')">0</button></td>
+            <td><button onclick="dis('.')">.</button></td>
+            <td><button onclick="dis('/')">/</button></td>
+            <td><button onclick="solve('=')">= </button></td>
+        </tr>
+    </table>
+</main>
+    <script>
+        function dis(x){
+            if (document.getElementById("cal").value==0) {
+                document.getElementById("cal").value='';
+                document.getElementById("cal").value=x
+
+                
+            }
+            else{
+                document.getElementById("cal").value+=x;
+            }
+        }
+
+        function solve() {
+            var x=document.getElementById("cal").value;
+            var y= eval(x)
+            var y=document.getElementById("cal").value=y
+            
+        }
+
+        function clean() {
+            document.getElementById('cal').value=0
+            
+        }
+    </script>
+</body>
+</html>
